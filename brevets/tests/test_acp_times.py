@@ -75,13 +75,15 @@ def test_ex2_close():
 
     brevet_dist_km = 600
     brevet_start_time = arrow.now()
+    control_2_km = 200
     control_4_km = 550
     control_5_km = 609
 
-
+    close_time_2 = acp_times.close_time(control_2_km, brevet_dist_km, brevet_start_time)
     close_time_4 = acp_times.close_time(control_4_km, brevet_dist_km, brevet_start_time)
     close_time_5 = acp_times.close_time(control_5_km, brevet_dist_km, brevet_start_time)
 
+    assert close_time_2 == brevet_start_time.shift(hours=13, minutes=20)
     assert close_time_4 == brevet_start_time.shift(hours=36, minutes=40)
     assert close_time_5 == brevet_start_time.shift(hours=40, minutes=0)
 

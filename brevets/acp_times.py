@@ -134,7 +134,7 @@ def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
       time_result = control_st_calc(control, 20)
       hour = time_result['hour'] + 1
       minute = time_result['minute']
-   elif control == 200:
+   elif control == 200 and brevet_dist_km == 200:
       hour = 13
       minute = 30
    elif control <= 600:
