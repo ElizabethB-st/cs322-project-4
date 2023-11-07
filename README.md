@@ -6,12 +6,13 @@ This project is based on RUSA's online calculator [https://rusa.org/octime_acp.h
 
 The table below gives the minimum and maximum speeds for ACP brevets.
 
-Control location (km)	Minimum Speed (km/hr)	Maximum Speed (km/hr)
-0 - 200	15	34
-200 - 400	15	32
-400 - 600	15	30
-600 - 1000	11.428	28
-1000 - 1300	13.333	26
+| Control Distance (km) | Min Speed (km/h) | Max Speed (km/h) |
+|-----------------------|------------------|------------------|
+| 0 - 200               | 15               | 34               |
+| 200 - 400             | 15               | 32               |
+| 400 - 600             | 15               | 30               |
+| 600 - 1000            | 11.428           | 28               |
+| 1000 - 1300           | 13.333           | 26               |
 The calculation of a control's opening time is based on the maximum speed. Calculation of a control's closing time is based on the minimum speed.
 
 # Distance, speed, and time calculation
@@ -73,11 +74,13 @@ The table presented at the top of the page has a row for controls between 1000km
 
 Build the web flask app image using:
 
-docker build -t some-image-name .
+```docker build -t some-image-name .```
+
+*Make sure to build the image in the ./brevets folder*
 
 Run the container using:
 
-docker run -d -p 5001:5000 some-image-name
+```docker run -d -p 5001:5000 some-image-name```
 
 Launch http://hostname:5001 using your web browser
 
