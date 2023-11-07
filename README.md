@@ -13,6 +13,7 @@ The table below gives the minimum and maximum speeds for ACP brevets.
 | 400 - 600             | 15               | 30               |
 | 600 - 1000            | 11.428           | 28               |
 | 1000 - 1300           | 13.333           | 26               |
+
 The calculation of a control's opening time is based on the maximum speed. Calculation of a control's closing time is based on the minimum speed.
 
 # Distance, speed, and time calculation
@@ -24,7 +25,8 @@ The calculator converts all inputs expressed in units of miles to kilometers and
 # Example 1:
 Consider a 200km brevet with controls at 60km, 120km, 175km, and at the finish (205km).
 
-Opening Times
+Opening Times:
+
 The controls at 60km, 120km, and 175km are each governed by a 34 km/hr maximum speed. 
 60/34 = 1H46 
 120/34 = 3H32 
@@ -33,7 +35,8 @@ The controls at 60km, 120km, and 175km are each governed by a 34 km/hr maximum s
 
 Note that we use a distance of 200km in the calculation, even though the route was slightly longer than that (205km).
 
-Closing Times
+Closing Times:
+
 The minimum speed of 15 km/hr is used to determine the closing times. 
 60/15 = 4H00 
 120/15 = 8H00 
@@ -44,23 +47,27 @@ By the rules, the overall time limit for a 200km brevet is 13H30, even though by
 # Example 2:
 Consider a 600km brevet with intermediate controls every 50km and an overall distance of 609km. A common question that we get is "which row of the minimum/maximum speed table do we use in this case: the 400-600 or the 600-1000"? This question illustrates a common misunderstanding of the algorithm. In fact, we use the speeds in each of the first three rows of the table: the first row of speeds for controls between 0 and 200km, the second row for controls between 200km and 400km, and the third row for controls between 400km and 600km.
 
-Opening Times
+Opening Times:
+
 Consider the control at 100km. For that distance, the calculation is 100/34 = 2H56. For the control at 200km, we have 200/34 = 5H53.
 
 For controls beyond the first 200km, the maximum speed decreases. Here the calculation is more difficult. Consider a control at 350km. We have 200/34 + 150/32 = 5H53 + 4H41 = 10H34. The 200/34 gives us the minimum time to complete the first 200km while the 150/32 gives us the minimum time to complete the next 150km. The sum gives us the control's opening time.
 
 Similarly, a control at 550km is 200/34 + 200/32 + 150/30 = 17H08.
 
-Closing Times
+Closing Times:
+
 Because the minimum speed for any distance in the first 600km is 15 km/hr, calculations can be done by dividing the control distance by 15. For example, a control at 550km is 550/15 = 36H40. The overall time limit is 600/15 = 40H00.
 
 # Example 3:
 Consider a control at 890km on a 1000km brevet.
 
-Opening Time
+Opening Time:
+
 200/34 + 200/32 + 200/30 + 290/28 = 29H09
 
-Closing Time
+Closing Time:
+
 600/15 + 290/11.428 = 65H23
 
 # Oddities
